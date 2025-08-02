@@ -1,7 +1,8 @@
+import HomeNavbar from "@/components/landing-page/Navbar";
 import React from "react";
 
-const Home = () => {
-  return <div className=" text-teal-700">Home</div>;
+const page = () => {
+  return <HomeNavbar />;
 };
 
-export default Home;
+export default page;
