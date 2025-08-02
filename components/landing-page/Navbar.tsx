@@ -32,7 +32,7 @@ const HomeNavbar = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
   return (
-    <div className="relative w-full">
+    <div className="relative w-full bg-gradient-to-br from-fuchsia-50 to-indigo-200 h-screen">
       <Navbar>
         {/* Desktop Navigation */}
         <NavBody>

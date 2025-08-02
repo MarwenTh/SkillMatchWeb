@@ -1,44 +1,52 @@
 "use client";
 import React from "react";
 import Navbar from "./Navbar";
-import { WavyBackground } from "@/components/ui/wavy-background";
-import { motion } from "framer-motion";
+import { PointerHighlight } from "../ui/pointer-highlight";
+import { Check } from "lucide-react";
 
 const Home = () => {
+  const benefits = [
+    {
+      title: "AI Resume Builder",
+    },
+    {
+      title: "Automated Job Tracking",
+    },
+    {
+      title: "Optimize Your Professional Profile",
+    },
+    {
+      title: "And Much More...",
+    },
+  ];
   return (
-    <div className="min-h-screen bg-gradient-to-br from-blue-50 via-white to-indigo-50">
-      <Navbar />
-      <WavyBackground variant="bottom" color="#3B82F6" className="min-h-screen">
-        <div className="container mx-auto p-8 pt-20">
-          <div className="flex flex-col items-center justify-center min-h-[80vh] text-center">
-            <motion.h1
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8 }}
-              className="text-5xl md:text-6xl font-bold text-gray-900 mb-6"
-            >
-              Land your dream job with just a swipe
-            </motion.h1>
-            <motion.p
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 0.2 }}
-              className="text-xl text-gray-600 mb-8 max-w-2xl"
-            >
-              Match with your perfect career opportunity through our innovative
-              swipe-based job matching platform
-            </motion.p>
-            <motion.button
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 0.4 }}
-              className="bg-blue-600 hover:bg-blue-700 text-white font-semibold py-3 px-8 rounded-full text-lg transition-colors duration-200"
-            >
-              Get Started
-            </motion.button>
-          </div>
+    <div className="container mx-auto p-8 pt-10 ">
+      <div className="flex flex-col items-center justify-center ">
+        <p className="text-sm text-purple-500 uppercase font-semibold">
+          Trusted by OVER 500K JOB SEEKERS!
+        </p>
+        <div className="text-4xl md:text-6xl font-bold text-center">
+          Land your{" "}
+          <PointerHighlight
+            rectangleClassName="bg-blue-100 dark:bg-blue-900 border-blue-300 dark:border-blue-700 leading-loose"
+            pointerClassName="text-blue-500 h-3 w-3"
+            containerClassName="inline-block mx-1"
+          >
+            <span className="text-blue-500 relative z-10"> dream job.</span>
+          </PointerHighlight>
+          <br /> With just a swipe.
         </div>
-      </WavyBackground>
+        <div className=" flex flex-row space-x-5 my-10">
+          {benefits.map((benefit, idx) => (
+            <div key={idx} className="flex flex-row items-center space-x-1.5">
+              <div className="p-1 rounded-full border-[1.9px] bg-blue-200/80 border-blue-400">
+                <Check size={15} />
+              </div>
+              <p className="text-xl font-medium text-black">{benefit.title}</p>
+            </div>
+          ))}
+        </div>
+      </div>
     </div>
   );
 };
