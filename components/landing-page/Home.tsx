@@ -37,6 +37,10 @@ const Home = () => {
           </PointerHighlight>
           <br /> With just a swipe.
         </div>
+        <div className=" text-center font-medium text-lg md:text-xl text-gray-700 mt-5">
+          Swipe right on opportunities, connect with top companies, <br />
+          and land your dream job faster than ever.
+        </div>
         <div className=" flex flex-row space-x-5 my-10">
           {benefits.map((benefit, idx) => (
             <div key={idx} className="flex flex-row items-center space-x-1.5">
@@ -47,6 +51,7 @@ const Home = () => {
             </div>
           ))}
         </div>
+
         <div className=" flex flex-row space-x-8 ">
           <Link
             href="/download"
@@ -71,16 +76,6 @@ const Home = () => {
             </span>
           </Link>
         </div>
-        <video width="320" height="240" controls preload="none">
-          <source src="../../assets/video/video.mp4" type="video/mp4" />
-          <track
-            src="/path/to/captions.vtt"
-            kind="subtitles"
-            srcLang="en"
-            label="English"
-          />
-          Your browser does not support the video tag.
-        </video>
       </div>
     </div>
   );
