@@ -14,6 +14,7 @@ import { Button } from "../ui/stateful-button";
 import AppStoreBadge from "@/assets/images/AppStoreBadge.png";
 import GooglePlayBadge from "@/assets/images/GooglePlayBadge.png";
 import { FaRegCircleXmark } from "react-icons/fa6";
+import { signIn } from "next-auth/react";
 
 const Signup = () => {
   const handleSubmit = (e: React.FormEvent) => {
@@ -52,11 +53,17 @@ const Signup = () => {
           .
         </p>
         <div className=" flex flex-col gap-4 mt-6">
-          <button className=" flex flex-row items-center justify-center gap-x-3 font-medium bg-white border border-[#c1cddb] rounded-full py-2 px-4 shadow-sm hover:bg-[#e0e2e6] ease-in-out transition-colors duration-300 cursor-pointer ring-offset-2 hover:ring-2 hover:ring-gray-300 dark:ring-offset-black">
+          <button
+            onClick={() => signIn("google")}
+            className=" flex flex-row items-center justify-center gap-x-3 font-medium bg-white border border-[#c1cddb] rounded-full py-2 px-4 shadow-sm hover:bg-[#e0e2e6] ease-in-out transition-colors duration-300 cursor-pointer ring-offset-2 hover:ring-2 hover:ring-gray-300 dark:ring-offset-black"
+          >
             <FaGoogle size={20} />
             Continue with Google
           </button>
-          <button className=" flex flex-row items-center justify-center gap-x-3 font-medium bg-white border border-[#c1cddb] rounded-full py-2 px-4 shadow-sm hover:bg-[#e0e2e6] ease-in-out transition-colors duration-300 cursor-pointer ring-offset-2 hover:ring-2 hover:ring-gray-300 dark:ring-offset-black">
+          <button
+            onClick={() => signIn("github")}
+            className=" flex flex-row items-center justify-center gap-x-3 font-medium bg-white border border-[#c1cddb] rounded-full py-2 px-4 shadow-sm hover:bg-[#e0e2e6] ease-in-out transition-colors duration-300 cursor-pointer ring-offset-2 hover:ring-2 hover:ring-gray-300 dark:ring-offset-black"
+          >
             <FaGithub size={20} />
             Continue with Github
           </button>
