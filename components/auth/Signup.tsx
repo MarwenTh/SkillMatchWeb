@@ -74,20 +74,24 @@ const Signup = () => {
         </div>
         <div className=" my-5 font-bold text-center text-xl">Get the App!</div>
         <div className=" flex flex-row justify-center items-center ">
-          <Image
-            src={AppStoreBadge}
-            alt="App Store Badge"
-            width={100}
-            height={100}
-            className=" cursor-pointer hover:scale-105 transition-transform duration-300"
-          />
-          <Image
-            src={GooglePlayBadge}
-            alt="Google Play Badge"
-            width={125}
-            height={125}
-            className=" cursor-pointer hover:scale-105 transition-transform duration-300"
-          />
+          <Link href="/appstore">
+            <Image
+              src={AppStoreBadge}
+              alt="App Store Badge"
+              width={100}
+              height={100}
+              className=" cursor-pointer hover:scale-105 transition-transform duration-300"
+            />
+          </Link>
+          <Link href="/playstore">
+            <Image
+              src={GooglePlayBadge}
+              alt="Google Play Badge"
+              width={125}
+              height={125}
+              className=" cursor-pointer hover:scale-105 transition-transform duration-300"
+            />
+          </Link>
         </div>
         <FaRegCircleXmark
           size={20}
