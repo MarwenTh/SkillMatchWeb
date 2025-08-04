@@ -4,6 +4,7 @@ import Navbar from "./Navbar";
 import { PointerHighlight } from "../ui/pointer-highlight";
 import { Check, CloudDownload } from "lucide-react";
 import Link from "next/link";
+import { FaCloudDownloadAlt, FaPlay } from "react-icons/fa";
 
 const Home = () => {
   const benefits = [
@@ -60,7 +61,7 @@ const Home = () => {
             <span className="absolute bottom-0 right-0 w-8 h-20 -mb-8 -mr-5 transition-all duration-300 ease-out transform rotate-45 translate-x-1 bg-white opacity-10 group-hover:translate-x-0"></span>
             <span className="absolute top-0 left-0 w-20 h-8 -mt-1 -ml-12 transition-all duration-300 ease-out transform -rotate-45 -translate-x-1 bg-white opacity-10 group-hover:translate-x-0"></span>
             <span className="flex flex-row items-center text-sm  gap-x-3 ">
-              <CloudDownload size={20} />
+              <FaCloudDownloadAlt size={20} />
               Download now
             </span>
           </Link>
@@ -71,8 +72,8 @@ const Home = () => {
             <span className="absolute bottom-0 right-0 w-8 h-20 -mb-8 -mr-5 transition-all duration-300 ease-out transform rotate-45 translate-x-1 bg-white opacity-10 group-hover:translate-x-0"></span>
             <span className="absolute top-0 left-0 w-20 h-8 -mt-1 -ml-12 transition-all duration-300 ease-out transform -rotate-45 -translate-x-1 bg-white opacity-10 group-hover:translate-x-0"></span>
             <span className="flex flex-row items-center text-sm  gap-x-3 ">
-              <CloudDownload size={20} />
-              Get Started
+              <FaPlay size={20} />
+              Watch Demo
             </span>
           </Link>
         </div>

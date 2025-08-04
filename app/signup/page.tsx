@@ -1,9 +1,9 @@
 "use client";
-import Signup from "@/components/auth/Signup";
+import Auth from "@/components/auth/Register";
 import React from "react";
 
 const page = () => {
-  return <Signup />;
+  return <Auth />;
 };
 
 export default page;

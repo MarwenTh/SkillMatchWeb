@@ -12,6 +12,8 @@ import {
 } from "@/components/ui/resizable-navbar";
 import { useState } from "react";
 import Home from "./Home";
+import { Button } from "../ui/stateful-button";
+import Auth from "../auth/Register";
 
 const HomeNavbar = () => {
   const navItems = [
@@ -39,8 +41,7 @@ const HomeNavbar = () => {
           <NavbarLogo />
           <NavItems items={navItems} />
           <div className="flex items-center gap-4">
-            <NavbarButton variant="secondary">Login</NavbarButton>
-            <NavbarButton variant="primary">Book a call</NavbarButton>
+            <Auth />
           </div>
         </NavBody>
 
@@ -69,13 +70,7 @@ const HomeNavbar = () => {
               </a>
             ))}
             <div className="flex w-full flex-col gap-4">
-              <NavbarButton
-                onClick={() => setIsMobileMenuOpen(false)}
-                variant="primary"
-                className="w-full"
-              >
-                Login
-              </NavbarButton>
+              <Auth />
               <NavbarButton
                 onClick={() => setIsMobileMenuOpen(false)}
                 variant="primary"
