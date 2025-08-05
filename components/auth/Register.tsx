@@ -22,7 +22,7 @@ import {
   ModalTrigger,
 } from "../ui/animated-modal";
 
-const Auth = () => {
+const Register = () => {
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     // Handle form submission logic here
@@ -119,4 +119,4 @@ const Auth = () => {
   );
 };
 
-export default Auth;
+export default Register;

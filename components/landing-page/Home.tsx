@@ -42,7 +42,7 @@ const Home = () => {
           Swipe right on opportunities, connect with top companies, <br />
           and land your dream job faster than ever.
         </div>
-        <div className=" flex flex-row space-x-5 my-10">
+        <div className=" grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 space-x-5 my-10">
           {benefits.map((benefit, idx) => (
             <div key={idx} className="flex flex-row items-center space-x-1.5">
               <div className="p-1 rounded-full border-[1.9px] bg-blue-200/80 border-blue-400">
@@ -53,10 +53,10 @@ const Home = () => {
           ))}
         </div>
 
-        <div className=" flex flex-row space-x-8 ">
+        <div className=" flex flex-col md:flex-row space-x-8 ">
           <Link
             href="/download"
-            className="box-border relative z-30 inline-flex items-center justify-center w-auto px-8 py-3 overflow-hidden font-bold text-white transition-all duration-300 bg-indigo-600 rounded-md cursor-pointer group ring-offset-2 ring-1 ring-indigo-300 ring-offset-indigo-200 hover:ring-offset-indigo-500 ease focus:outline-none"
+            className="box-border w-full relative z-30 inline-flex items-center justify-center md:w-auto px-8 py-3 overflow-hidden font-bold text-white transition-all duration-300 bg-indigo-600 rounded-md cursor-pointer group ring-offset-2 ring-1 ring-indigo-300 ring-offset-indigo-200 hover:ring-offset-indigo-500 ease focus:outline-none"
           >
             <span className="absolute bottom-0 right-0 w-8 h-20 -mb-8 -mr-5 transition-all duration-300 ease-out transform rotate-45 translate-x-1 bg-white opacity-10 group-hover:translate-x-0"></span>
             <span className="absolute top-0 left-0 w-20 h-8 -mt-1 -ml-12 transition-all duration-300 ease-out transform -rotate-45 -translate-x-1 bg-white opacity-10 group-hover:translate-x-0"></span>
@@ -67,7 +67,7 @@ const Home = () => {
           </Link>
           <Link
             href="/signup"
-            className="box-border relative z-30 inline-flex items-center justify-center w-auto px-8 py-3 overflow-hidden font-bold text-white transition-all duration-300 bg-blue-400 rounded-md cursor-pointer group ring-offset-2 ring-1 ring-blue-300 ring-offset-blue-200 hover:ring-offset-blue-500 ease focus:outline-none"
+            className="box-border w-full relative z-30 inline-flex items-center justify-center md:w-auto px-8 py-3 overflow-hidden font-bold text-white transition-all duration-300 bg-blue-400 rounded-md cursor-pointer group ring-offset-2 ring-1 ring-blue-300 ring-offset-blue-200 hover:ring-offset-blue-500 ease focus:outline-none"
           >
             <span className="absolute bottom-0 right-0 w-8 h-20 -mb-8 -mr-5 transition-all duration-300 ease-out transform rotate-45 translate-x-1 bg-white opacity-10 group-hover:translate-x-0"></span>
             <span className="absolute top-0 left-0 w-20 h-8 -mt-1 -ml-12 transition-all duration-300 ease-out transform -rotate-45 -translate-x-1 bg-white opacity-10 group-hover:translate-x-0"></span>
