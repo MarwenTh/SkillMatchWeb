@@ -187,8 +187,7 @@ const Overlay = ({ className }: { className?: string }) => {
         opacity: 0,
         backdropFilter: "blur(0px)",
       }}
-      className={`fixed inset-0 h-full w-full bg-gray-300 bg-opacity-50 z-50 ${className}`}
-      style={{ backdropFilter: "blur(10px)" }}
+      className={`fixed inset-0 h-full w-full bg-gray-300/10 bg-opacity-50 z-50 backdrop-blur-xl ${className}`}
     ></motion.div>
   );
 };
