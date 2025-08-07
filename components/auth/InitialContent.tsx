@@ -45,7 +45,7 @@ const InitialContent: React.FC<InitialContentProps> = ({
       <div className="space-y-3">
         <button
           onClick={onGoogleSignIn}
-          className="w-full flex items-center justify-center gap-3 px-4 py-3 bg-white border border-neutral-200 rounded-lg hover:bg-neutral-50 hover:border-neutral-300 transition-all duration-200 font-medium text-neutral-700 dark:bg-neutral-800 dark:border-neutral-700 dark:text-neutral-200 dark:hover:bg-neutral-700 cursor-pointer"
+          className="w-full flex items-center justify-center gap-3 px-4 py-3 bg-white dark:bg-neutral-800 border border-neutral-200 dark:border-neutral-700 rounded-lg hover:bg-neutral-50 dark:hover:bg-neutral-700 hover:border-neutral-300 dark:hover:border-neutral-600 transition-all duration-200 font-medium text-neutral-700 dark:text-neutral-200 cursor-pointer"
         >
           <FaGoogle size={18} className="text-red-500" />
           Continue with Google
@@ -53,7 +53,7 @@ const InitialContent: React.FC<InitialContentProps> = ({
 
         <button
           onClick={onGithubSignIn}
-          className="w-full flex items-center justify-center gap-3 px-4 py-3 bg-white border border-neutral-200 rounded-lg hover:bg-neutral-50 hover:border-neutral-300 transition-all duration-200 font-medium text-neutral-700 dark:bg-neutral-800 dark:border-neutral-700 dark:text-neutral-200 dark:hover:bg-neutral-700 cursor-pointer"
+          className="w-full flex items-center justify-center gap-3 px-4 py-3 bg-white dark:bg-neutral-800 border border-neutral-200 dark:border-neutral-700 rounded-lg hover:bg-neutral-50 dark:hover:bg-neutral-700 hover:border-neutral-300 dark:hover:border-neutral-600 transition-all duration-200 font-medium text-neutral-700 dark:text-neutral-200 cursor-pointer"
         >
           <FaGithub size={18} />
           Continue with Github
@@ -64,7 +64,7 @@ const InitialContent: React.FC<InitialContentProps> = ({
             <div className="w-full border-t border-neutral-200 dark:border-neutral-700"></div>
           </div>
           <div className="relative flex justify-center text-xs uppercase">
-            <span className="bg-white dark:bg-black px-2 text-neutral-500">
+            <span className="bg-white dark:bg-neutral-900 px-2 text-neutral-500 dark:text-neutral-400">
               or
             </span>
           </div>
@@ -72,7 +72,7 @@ const InitialContent: React.FC<InitialContentProps> = ({
 
         <button
           onClick={onEmailContinue}
-          className="w-full flex items-center justify-center gap-3 px-4 py-3 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-all duration-200 font-medium cursor-pointer"
+          className="w-full flex items-center justify-center gap-3 px-4 py-3 bg-blue-600 dark:bg-blue-500 text-white rounded-lg hover:bg-blue-700 dark:hover:bg-blue-600 transition-all duration-200 font-medium cursor-pointer"
         >
           <MdEmail size={18} />
           Continue with Email
@@ -84,14 +84,14 @@ const InitialContent: React.FC<InitialContentProps> = ({
         By continuing, you agree to our{" "}
         <Link
           href={"/terms"}
-          className="text-blue-600 hover:underline font-medium"
+          className="text-blue-600 dark:text-blue-400 hover:underline font-medium"
         >
           Terms of Service
         </Link>{" "}
         and{" "}
         <Link
           href={"/privacy"}
-          className="text-blue-600 hover:underline font-medium"
+          className="text-blue-600 dark:text-blue-400 hover:underline font-medium"
         >
           Privacy Policy
         </Link>

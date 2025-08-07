@@ -14,6 +14,7 @@ import { useState } from "react";
 import Home from "./Home";
 import { Button } from "../ui/stateful-button";
 import Auth from "../auth/Register";
+import { ThemeToggle } from "../ui/theme-toggle";
 
 const HomeNavbar = () => {
   const navItems = [
@@ -34,13 +35,14 @@ const HomeNavbar = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
   return (
-    <div className="relative w-full bg-gradient-to-br from-fuchsia-50 to-indigo-200 min-h-screen overflow-x-hidden">
+    <div className="relative w-full bg-gradient-to-br from-fuchsia-50 to-indigo-200 dark:from-neutral-900 dark:to-neutral-800 min-h-screen overflow-x-hidden">
       <Navbar>
         {/* Desktop Navigation */}
         <NavBody>
           <NavbarLogo />
           <NavItems items={navItems} />
           <div className="flex items-center gap-4">
+            <ThemeToggle />
             <Auth />
           </div>
         </NavBody>
@@ -49,10 +51,13 @@ const HomeNavbar = () => {
         <MobileNav>
           <MobileNavHeader>
             <NavbarLogo />
-            <MobileNavToggle
-              isOpen={isMobileMenuOpen}
-              onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-            />
+            <div className="flex items-center gap-2">
+              <ThemeToggle />
+              <MobileNavToggle
+                isOpen={isMobileMenuOpen}
+                onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+              />
+            </div>
           </MobileNavHeader>
 
           <MobileNavMenu
