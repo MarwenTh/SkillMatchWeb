@@ -1,23 +1,9 @@
 "use client";
-import React, { useState } from "react";
-
+import React from "react";
 import AuthMethod from "./AuthMethod";
-import ProviderMethod from "./ProviderMethod";
-import EmailMethod from "./EmailMethod";
 
 const Register = () => {
-  const [authMethod, setAuthMethod] = useState<string>("AuthMethod");
-  return (
-    <>
-      {authMethod === "AuthMethod" ? (
-        <AuthMethod authMethod={authMethod} setAuthMethod={setAuthMethod} />
-      ) : authMethod === "ProviderMethod" ? (
-        <ProviderMethod />
-      ) : (
-        <EmailMethod />
-      )}
-    </>
-  );
+  return <AuthMethod />;
 };
 
 export default Register;
