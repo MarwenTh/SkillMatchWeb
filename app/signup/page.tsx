@@ -1,9 +1,9 @@
 "use client";
-import Register from "@/components/auth/Register";
+import SignupPage from "@/components/auth/SignupPage";
 import React from "react";
 
 const page = () => {
-  return <Register />;
+  return <SignupPage />;
 };
 
 export default page;
