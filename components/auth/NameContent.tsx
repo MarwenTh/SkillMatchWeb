@@ -1,18 +1,19 @@
 "use client";
 import React, { useState } from "react";
-import { MdArrowBack, MdEmail } from "react-icons/md";
+import { FaUser } from "react-icons/fa6";
+import { MdArrowBack } from "react-icons/md";
 
-interface EmailContentProps {
+interface NameContentProps {
   onBack: () => void;
-  onSubmit: (email: string) => void;
+  onSubmit: (name: string) => void;
 }
 
-const EmailContent: React.FC<EmailContentProps> = ({ onBack, onSubmit }) => {
-  const [email, setEmail] = useState("");
+const NameContent: React.FC<NameContentProps> = ({ onBack, onSubmit }) => {
+  const [name, setName] = useState("");
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    onSubmit(email);
+    onSubmit(name);
   };
 
   return (
@@ -42,21 +43,21 @@ const EmailContent: React.FC<EmailContentProps> = ({ onBack, onSubmit }) => {
       <form onSubmit={handleSubmit} className="space-y-4">
         <div className="space-y-2">
           <label
-            htmlFor="email"
+            htmlFor="name"
             className="block text-sm font-medium text-neutral-700 dark:text-neutral-300"
           >
-            Email Address
+            Your Name
           </label>
           <div className="relative">
             <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
-              <MdEmail size={18} className="text-neutral-400" />
+              <FaUser size={18} className="text-neutral-400" />
             </div>
             <input
-              type="email"
-              id="email"
-              value={email}
-              onChange={(e) => setEmail(e.target.value)}
-              placeholder="Enter your email address"
+              type="text"
+              id="name"
+              value={name}
+              onChange={(e) => setName(e.target.value)}
+              placeholder="Enter your name"
               className="w-full pl-10 pr-4 py-3 border border-neutral-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent bg-white dark:bg-neutral-800 dark:border-neutral-700 dark:text-neutral-100 dark:placeholder-neutral-500"
               required
             />
@@ -74,12 +75,12 @@ const EmailContent: React.FC<EmailContentProps> = ({ onBack, onSubmit }) => {
       {/* Additional Info */}
       <div className="text-center">
         <p className="text-xs text-neutral-500 dark:text-neutral-400">
-          We'll send you a verification link to this email to verify your
-          account.
+          What should we call you? This will be used to personalize your
+          experience.
         </p>
       </div>
     </div>
   );
 };
 
-export default EmailContent;
+export default NameContent;

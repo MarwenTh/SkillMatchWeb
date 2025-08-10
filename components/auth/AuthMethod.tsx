@@ -10,9 +10,11 @@ import {
 } from "../ui/animated-modal";
 import InitialContent from "./InitialContent";
 import EmailContent from "./EmailContent";
+import NameContent from "./NameContent";
+import PasswordContent from "./PasswordContent";
 import ProviderContent from "./ProviderContent";
 
-type AuthState = "initial" | "email" | "provider";
+type AuthState = "initial" | "email" | "name" | "password" | "provider";
 
 const AuthMethod: FC = () => {
   const [authState, setAuthState] = useState<AuthState>("initial");
@@ -31,13 +33,27 @@ const AuthMethod: FC = () => {
     setAuthState("email");
   };
 
-  const handleBack = () => {
-    setAuthState("initial");
-  };
+  // Back handlers for each step
+  const handleBackToInitial = () => setAuthState("initial");
+  const handleBackToEmail = () => setAuthState("email");
+  const handleBackToName = () => setAuthState("name");
 
   const handleEmailSubmit = (email: string) => {
-    // Handle email signup logic here
-    console.log("Email signup:", email);
+    // Capture email if needed, then go to Name step
+    console.log("Email provided:", email);
+    setAuthState("name");
+  };
+
+  const handleNameSubmit = (name: string) => {
+    // Capture name if needed, then go to Password step
+    console.log("Name provided:", name);
+    setAuthState("password");
+  };
+
+  const handlePasswordSubmit = (password: string) => {
+    // Finalize signup or proceed to your API/next step
+    console.log("Password provided:", password);
+    // TODO: Implement your signup flow here
   };
 
   return (
@@ -72,8 +88,36 @@ const AuthMethod: FC = () => {
             >
               <div className="p-8">
                 <EmailContent
-                  onBack={handleBack}
+                  onBack={handleBackToInitial}
                   onSubmit={handleEmailSubmit}
+                />
+              </div>
+            </div>
+            <div
+              className={`transition-all duration-300 ease-in-out ${
+                authState === "name"
+                  ? "opacity-100 translate-x-0"
+                  : "opacity-0 translate-x-full absolute inset-0"
+              }`}
+            >
+              <div className="p-8">
+                <NameContent
+                  onBack={handleBackToEmail}
+                  onSubmit={handleNameSubmit}
+                />
+              </div>
+            </div>
+            <div
+              className={`transition-all duration-300 ease-in-out ${
+                authState === "password"
+                  ? "opacity-100 translate-x-0"
+                  : "opacity-0 translate-x-full absolute inset-0"
+              }`}
+            >
+              <div className="p-8">
+                <PasswordContent
+                  onBack={handleBackToName}
+                  onSubmit={handlePasswordSubmit}
                 />
               </div>
             </div>
@@ -85,7 +129,7 @@ const AuthMethod: FC = () => {
               }`}
             >
               <div className="p-8">
-                <ProviderContent onBack={handleBack} />
+                <ProviderContent onBack={handleBackToInitial} />
               </div>
             </div>
           </div>

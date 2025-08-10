@@ -19,8 +19,6 @@ import {
   Globe,
 } from "lucide-react";
 import Link from "next/link";
-import { FaCloudDownloadAlt, FaPlay } from "react-icons/fa";
-import { LoaderFive } from "../ui/loader";
 import { motion } from "framer-motion";
 
 const Home = () => {
